@@ -11,6 +11,7 @@ final에서 미니 포토샵을 통해 이미지 및 영상을 변환하는 작�
 
 ## HW1 Point Processing
 ![image](https://user-images.githubusercontent.com/63103070/124430498-32b78980-ddaa-11eb-8932-50a812794d40.png)
+
 1. Histogram Equalization을 이용한 대비개선
  - opencv 라이브러리를 사용하여 이미지를 가져온다.
  - 픽셀값을 읽으면서 누적 histogram을 계산한다. (2D -> 1D)
@@ -19,11 +20,13 @@ final에서 미니 포토샵을 통해 이미지 및 영상을 변환하는 작�
  - 결과 이미지를 저장하고, 화면에 출력한다.
 
 ![image](https://user-images.githubusercontent.com/63103070/124430531-3f3be200-ddaa-11eb-83a7-e9ddd570795a.png)
+
 2. negative
  - gray scale 이미지의 픽셀 값을 하나씩 읽으면서 255에서 값을 빼 반전시킨다.
  - 결과 이미지를 저장하고, 화면에 출력한다.
 
 ![image](https://user-images.githubusercontent.com/63103070/124430575-4e229480-ddaa-11eb-8924-8f451fd16f31.png)
+
 3. power law transformation
  - 이미지를 가져오고 𝑠 = 𝑐𝑟^𝛾 에서 c = 1 로 고정한 뒤 다음을 각 픽셀에 대해 반복한다.
  - r은 [0, 1] 사이의 값 이므로, 255로 나누어 준 뒤 이를 감마 제곱한다. 
@@ -38,6 +41,7 @@ cf.자세한 결과 분석은 첨부된 pdf 참조
 
 ## HW2 Area processing (Smoothing, Sharpening, Edge detection)
 ![image](https://user-images.githubusercontent.com/63103070/124430649-6397be80-ddaa-11eb-8538-ea6a29bd5403.png)
+
 [Smoothing]
 1. Gaussian filtering
   - sigma값을 10으로 하여 1D에서의 gaussian값을 행, 열 방향으로 구하여 mask를 얻는다.
@@ -62,6 +66,7 @@ cf.자세한 결과 분석은 첨부된 pdf 참조
 빠른 속도와 노이즈 제거 성능을 모두 고려한다면 Gaussian filter를 사용
 
 ![image](https://user-images.githubusercontent.com/63103070/124430715-790ce880-ddaa-11eb-9740-1223f44528d0.png)
+
 [Sharpening]
 1. Highboost filtering
   - high boost filter mask를 생성한다. 
@@ -70,6 +75,7 @@ cf.자세한 결과 분석은 첨부된 pdf 참조
   - 결과 이미지를 저장하고, 화면에 출력한다
 
 ![image](https://user-images.githubusercontent.com/63103070/124430747-8924c800-ddaa-11eb-87f5-49739397f4ee.png)
+
 [Edge Detection]
 1. Gradient (Sobel, Prewitt)
   - x축 및 y축으로 sobel mask를 생성한다.
@@ -91,6 +97,7 @@ cf.자세한 결과 분석은 첨부된 pdf 참조
 
 ## HW3 Object recognition in videos
 ![image](https://user-images.githubusercontent.com/63103070/124430929-bb362a00-ddaa-11eb-81d0-079dfa00bcb5.png)
+
 [ 피부색으로 객체 추출 – color 사용 ]
 - 영상을 cv2.VidieCapture를 통해 가져온다.
 - 프레임마다 아래 과정을 수행한다.
@@ -104,7 +111,9 @@ cf.자세한 결과 분석은 첨부된 pdf 참조
 2. Project –hand gesture.AVI – 얼굴 및 손 추출
 
 ![image](https://user-images.githubusercontent.com/63103070/124430974-c8ebaf80-ddaa-11eb-85e8-f2503e2019ff.png)
+
 ![image](https://user-images.githubusercontent.com/63103070/124431066-e456ba80-ddaa-11eb-9831-7a7dae757ef6.png)
+
 [ 배경 제거로 움직이는 객체 추출 ]
 - 영상을 cv2.VidieCapture를 통해 가져온다.
 - 프레임마다 아래 과정을 수행한다.
@@ -137,6 +146,7 @@ detection, LoG edge detection을 위한 이미지 파일을 저장합니다.
 
 
 ![image](https://user-images.githubusercontent.com/63103070/124430052-a4430800-dda9-11eb-9ef1-2e5c85a67ac2.png)
+
 [화면 구성]
 1. 가장 위쪽 레이어에서 영상 및 이미지가 변환된 모습을 확인할 수 있습니다. 또
 한 변환된 영상 및 이미지는 result 폴더 및 background 폴더에 저장됩니다.
